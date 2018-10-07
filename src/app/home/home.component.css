@@ -1,0 +1,8 @@
+.mat-card-title {
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.mat-card {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,86 @@
+<mat-accordion class="example-headers-align">
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        About Angular
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    When people talk about Angular, they talk about it as a JavaScript framework. It is used to build so-called Single Page Applications (SPA).
+    <p>The Angular framework enables us to write these single page applications with ease. It comes with features like data-binding, change-detection, forms, routing & navigation and an HTTP-implementation right out of the box. </p>
+    <p>Angular is primarily sustained by Google together with an extended community of people and companies.</p>
+    <mat-action-row>
+      <button mat-button color="primary" (click)="nextStep()">Next</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Version
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <strong>AngularJS</strong> and <strong>Angular</strong> are different frameworks.
+    <p>When it all started, this framework was called AngularJS, and alludes to what we now know as Angular 1.x. Then, Angular 2 arrived as a complete rewrite of the framework, improving from lessons learned and promising performance improvements, and a more scalable and more modern framework.</p>
+    <p>AngularJS<br>All versions (current and future ones) of AngularJS are versioned as 1.x.</p>
+    <p>Angular<br>Angular versions start at 2.0.0 which follows semantic versioning. Below are the list of available known Angular versions till December 2018.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Version</th>
+          <th>Release Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>^2.0.0</td>
+          <td>October 22-23, 2014</td>
+        </tr>
+        <tr>
+          <td>^4.0.0</td>
+          <td>March 23, 2017</td>
+        </tr>
+        <tr>
+          <td>^5.0.0</td>
+          <td>November 1, 2017</td>
+        </tr>
+        <tr>
+          <td>^6.0.0</td>
+          <td>May 3, 2018</td>
+        </tr>
+        <tr>
+          <td>7.0.0 </td>
+          <td>September/October 2018</td>
+        </tr>
+        <tr>
+          <td>8.0.0 </td>
+          <td>March/April 2019</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <mat-action-row>
+      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+      <button mat-button color="primary" (click)="nextStep()">Next</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Things to know before starting Angular
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    Basic understanding of below list are recommanded:
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>TypeScript</li>
+    </ul>
+    <mat-action-row>
+      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+      <button mat-button color="primary" (click)="nextStep()">End</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+</mat-accordion>

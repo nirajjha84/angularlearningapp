@@ -1,0 +1,61 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #drawer mode="push">
+    <h2 class="username"><span>Hello</span>{{userName}}</h2>
+    <mat-list>
+      <a routerLink="" (click)="drawer.toggle()">
+        <mat-list-item>
+          <fa-icon [icon]="faHome"></fa-icon> Home
+        </mat-list-item>
+      </a>
+      <a routerLink="/overview" (click)="drawer.toggle()">
+        <mat-list-item>
+          <fa-icon [icon]="faBookOpen"></fa-icon> Overview
+        </mat-list-item>
+      </a>
+      <a routerLink="/setup" (click)="drawer.toggle()">
+        <mat-list-item>
+          <fa-icon [icon]="faCog"></fa-icon> Setup Guide
+        </mat-list-item>
+      </a>
+      <a routerLink="/topics" (click)="drawer.toggle()">
+        <mat-list-item>
+          <fa-icon [icon]="faClipboardList"></fa-icon> Angular Topics
+        </mat-list-item>
+      </a>
+      <mat-divider></mat-divider>
+      <a routerLink="/weatherapp" (click)="drawer.toggle()">
+        <mat-list-item>
+          <fa-icon [icon]="faCode"></fa-icon> Quick Tutorial on Weather App
+        </mat-list-item>
+      </a>
+      <a routerLink="/qna" (click)="drawer.toggle()">
+        <mat-list-item>
+          <fa-icon [icon]="faQuestion"></fa-icon> Learn from Q&A
+        </mat-list-item>
+      </a>
+      <a routerLink="/interview" (click)="drawer.toggle()">
+        <mat-list-item>
+          <fa-icon [icon]="faFile"></fa-icon> Interview Questions
+        </mat-list-item>
+      </a>
+      <mat-divider></mat-divider>
+      <a routerLink="/about" (click)="drawer.toggle()">
+        <mat-list-item>
+          <fa-icon [icon]="faUser"></fa-icon> About the Author
+        </mat-list-item>
+      </a>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <fa-icon class="topmenu" mat-button (click)="drawer.toggle()" [icon]="faBars"></fa-icon>
+        <span>{{title}}</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

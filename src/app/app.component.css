@@ -1,0 +1,20 @@
+mat-sidenav {
+    width: 250px;
+    padding: 10px;
+    background: #c0392b !important;
+    color: #fff !important;
+}
+mat-list a {
+    text-decoration: none;
+    color: #fff;
+}
+.topmenu {
+    margin-right: 20px;
+}
+h2.username {
+    font-weight: normal;
+}
+h2.username span {
+    font-size: 12px;
+    display: block;
+}
