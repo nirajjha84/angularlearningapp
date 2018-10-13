@@ -9,6 +9,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatChipsModule} from '@angular/material/chips';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { OverviewComponent } from './overview/overview.component';
@@ -40,6 +41,7 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     MatSidenavModule,
     MatExpansionModule,
+    MatChipsModule,
     MatButtonModule,
     MatListModule,
     MatMenuModule,

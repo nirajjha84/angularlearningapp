@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-setup',
   templateUrl: './setup.component.html',
   styleUrls: ['./setup.component.css']
 })
-export class SetupComponent implements OnInit {
+export class SetupComponent {
 
-  constructor() { }
+  faCog = faCog;
 
-  ngOnInit() {
+  step = null;
+
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
   }
 
 }

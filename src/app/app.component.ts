@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import 'hammerjs';
-import { faBars, faBookOpen, faHome, faUser, faQuestion, faFile, faCode, faClipboardList, faCog } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAngleLeft, faBars, faBookOpen, faHome, faUser, faQuestion, faFile, faCode, faClipboardList, faCog, faArrowCircleLeft 
+} from '@fortawesome/free-solid-svg-icons';
+import {Location} from '@angular/common';
 
 
 @Component({
@@ -9,8 +12,12 @@ import { faBars, faBookOpen, faHome, faUser, faQuestion, faFile, faCode, faClipb
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
+  constructor(private _location: Location) {
+  }
+
   title = 'Angular Tutorial';
-  userName = 'Not known';
+  currentDate = new Date();
   faHome = faHome;
   faBars = faBars;
   faBookOpen = faBookOpen;
@@ -19,5 +26,15 @@ export class AppComponent {
   faFile = faFile;
   faCode = faCode;
   faClipboardList = faClipboardList;
+  faArrowCircleLeft = faArrowCircleLeft;
   faCog = faCog;
+  faAngleLeft = faAngleLeft;
+
+  /** 
+   * method will take user to back screen
+   * It is applied on global app toolbar
+  */
+  navigateBack() {
+    this._location.back();
+  }
 }

@@ -1,3 +1,177 @@
-<p>
-  setup works!
-</p>
+<mat-toolbar color="warn">
+    <mat-toolbar-row>
+      <span>Setup Guide</span>
+      <span class="header-spacer"></span>
+      <fa-icon [icon]="faCog" class="header-icon"></fa-icon>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-accordion class="example-headers-align">
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Setup a Node development environment
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    You need Node.js, since the libraries required for Angular are downloaded using node package manager (npm) . 
+     Node.js powers client development and build tools. 
+    The npm package manager, which is itself a Node.js application, installs JavaScript libraries.
+    <p><strong>Visit below url and install node js</strong><br><a href="https://nodejs.org/en/">https://nodejs.org/en/</a></p>
+    <p><img src="./assets/node.png" /></p>
+    <p>Verify that you are running Node.js v8.x or higher and npm 5.x or higher by running the commands 
+      node -v and npm -v in a terminal/console window. Older versions produce errors.
+    </p>
+    <p><code>node -v</code></p>
+    <p><img src="./assets/command_prompt_node.jpg" style="width:100%" /></p>
+    <mat-action-row>
+      <button mat-button color="primary" (click)="nextStep()">Next</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Setup the Angular CLI
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <strong>What is Angular CLI</strong>
+    <p>Angular CLI stands for Angular Command Line Interface. As the name implies, it is a command line tool for creating angular apps.</p>
+    <p><strong>Using and Installing Angular CLI</strong></p>
+    <p>Angular CLI is a command line interface for Angular, and is very useful in quickly creating an Angular 6 project template. 
+      Install the Angular CLI npm package globally using the following command:</p>
+    <p><code>npm install -g @angular/cli</code></p>
+    <p>npm Package manager will install Angular CLI for you.</p>
+
+    <mat-action-row>
+      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+      <button mat-button color="primary" (click)="nextStep()">Next</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Create an Angular application
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    The CLI creates a standard structure for project, and setup a working build. 
+    The build needs dependencies, that will be downloaded by default using the npm package manager.
+
+    <p><strong>Create an Angular application</strong>
+        <code>ng new my-app-name</code>
+      </p>
+      <em>*my-app-name is the name of app which you want to create.</em>
+
+      <p>This is going to take a while, but it will create a new project structure and it will install all the needed dependencies in one go. 
+        You now have a ready to use project!</p>
+      
+        <p>Now to run application, go inside the app folder<br>
+      <code>cd my-app-name</code></p>
+
+      <p>Now run the serve command which will build the application
+        <code>ng serve</code>
+      </p>
+      <p>The ng serve command should start a development server on your locahost port 4200, so if you go to your browser and enter the following url:</p>
+      <p><code>http://localhost:4200</code></p>
+      <p><img src="./assets/angular_app.png" style="width:100%" /></p>
+      <p>That's it, you have your first angular application ready.</p>
+
+    <mat-action-row>
+      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+      <button mat-button color="primary" (click)="nextStep()">Next</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Understand Angular app structure
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      When you create the project, you’ll notice that it creates a bunch of files. 
+      Here is the list of the important files and folders that you should be aware of:
+      <p>In Visual Studio code, app folder structure will look like below -</p>
+      <p><img src="./assets/angular_folder.png" /></p>
+      <ul>
+
+     <li><strong>package.json</strong>: This file has the list of node dependencies which are needed.</li>
+     <br /><li><strong>src/styles.css</strong>: This file has the global CSS available throughout the application.</li>
+     <br /><li><strong>src/main.</strong>: This is the main file which starts the Angular Application (AppModule is bootstrapped here as seen in the code ). Here the Extension .ts stands for TypeScript.</li>
+     <br /><li><strong>src/index.html</strong>: This the first file which executes alongside main.ts when the page loads.</li>
+     <br /><li><strong>src/app/app.module.ts</strong>: This is the file where all the components, providers, and modules are defined. Without defining them here, they can’t be used elsewhere in the code.</li>
+     <br /><li><strong>src/app/app.component.html</strong>: This is the main component of an angular app, and all other components are usually present within this component. src/app/app.component.ts is the logic for this component, and src/app/app.component.css is the CSS for this component. This component itself does not do any important logic, but acts as a container for other components.</li>
+     <br /><li><strong>dist</strong>: This folder is where the built files are present. TypeScript is basically converted to JavaScript and the resulting files are stored here after bundling and minification. (This Folder appears only if the application is built. A simple “npm start” will not create this folder. ) Since web browsers understand only JavaScript (at least for now), it is therefore necessary to convert TypeScript to JavaScript before deploying the code. To see this folder, you can type the following in the command prompt:
+      <code>npm run build</code>
+      </li>
+
+      <p>There are several other files as well, but knowing these basic ones is good for a start.</p>
+</ul>
+  
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step === 4" (opened)="setStep(4)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Useful Angular CLI command
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    You need a new component, module, service or any other angular construct. 
+    Angular-cli can create these files for you.
+
+    <p><strong>ng generate</strong></p>
+    <p>if you need a new component, you could open a terminal at the desired location and use the below
+        command to generate all the files you need to create a new component. 
+    </p>
+    <p><code>ng generate component [name]</code></p>
+    <p>The CLI will generate a new folder for you. 
+      If you don't want that extra folder, you can use the --flat option:
+    <code>ng generate component [name] --flat</code>
+    </p>
+    <p>This does not only work for components. 
+      You can create a whole bunch of different angular-blueprints by replacing component by one of the following.</p>
+      <ul>
+        <li>class
+        <li>directive</li>
+        <li>enum</li>
+        <li>guard</li>
+        <li>interface</li>
+        <li>module</li>
+        <li>pipe</li>
+        <li>service</li>
+      </ul>
+
+      <p><strong>Running your App</strong></p>
+      <p>Once you are done creating and developing angular application, you also want to test and run it.</p>
+      <p><code>ng serve</code></p>
+      <p>It will start application in development mode. It will also watch the directory of your application for changes. 
+        So if it detects a change, it will recompile the application (partly) and automatically update the application in the browser.        </p>
+
+      <p><strong>Building</strong></p>
+      <p>When you are happy with your angular app, it is time to deploy it to a web-server.
+        To get the files, that are required for that, you can use the below command</p>
+        <p><code>ng build</code></p>
+        <p>This command will cause the CLI to build your application and places the output in a directory called "dist" (by default).</p>
+        <p>Using this command, the app is still in an development state. </p>
+
+        <p>This means, that certain optimizations where not performed and the app is still using the development environment variables.</p>
+            
+        <p>To change that, use the --prod flag like this:</p>
+        <p><code>ng build --prod</code></p>
+
+        <p><strong>Disable the CLI for your project</strong></p>
+        <p><code>ng eject</code></p>
+        <p>It will disable the CLI for your project and create you a webpack configuration file.</p>
+        <p>While the CLI was using webpack under the hood anyway, you now have full control over webpack.</p>
+        <p>Keep in mind, that this command is a one way ticket. There is no command that coverts the project pack to angular-cli-mode.</p>
+    <mat-action-row>
+      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+      <button mat-button color="primary" (click)="nextStep()">End</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+</mat-accordion>

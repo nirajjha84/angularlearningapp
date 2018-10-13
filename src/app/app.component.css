@@ -1,20 +1,30 @@
 mat-sidenav {
     width: 250px;
     padding: 10px;
-    background: #c0392b !important;
+    background: #f44336 !important;
     color: #fff !important;
 }
 mat-list a {
     text-decoration: none;
     color: #fff;
 }
+.mat-list .mat-list-item, .mat-nav-list .mat-list-item, .mat-selection-list .mat-list-item {
+    color: #fff;
+}
+.mat-list-item .ng-fa-icon {
+    padding-right:10px;
+    min-width: 20px;
+}
+.header-fill-remaining-space {
+    flex: 1 1 auto;
+  }
 .topmenu {
     margin-right: 20px;
 }
-h2.username {
-    font-weight: normal;
+.dateandtime {
+    color: #fab1a0;
+    margin-left: 15px;
 }
-h2.username span {
-    font-size: 12px;
-    display: block;
+.header-icon {
+    padding: 0 14px;
 }

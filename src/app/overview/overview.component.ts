@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-overview',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./overview.component.css']
 })
 export class OverviewComponent {
-  step = 0;
+  faBookOpen = faBookOpen;
+  step = null;
 
   setStep(index: number) {
     this.step = index;

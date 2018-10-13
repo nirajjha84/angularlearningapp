@@ -1,6 +1,6 @@
 <mat-sidenav-container fullscreen>
-  <mat-sidenav #drawer mode="push">
-    <h2 class="username"><span>Hello</span>{{userName}}</h2>
+  <mat-sidenav #drawer mode="push" color="warn">
+    <h3 class="dateandtime">{{currentDate | date:'dd MMMM yyyy'}}</h3>
     <mat-list>
       <a routerLink="" (click)="drawer.toggle()">
         <mat-list-item>
@@ -23,6 +23,7 @@
         </mat-list-item>
       </a>
       <mat-divider></mat-divider>
+      <br />
       <a routerLink="/weatherapp" (click)="drawer.toggle()">
         <mat-list-item>
           <fa-icon [icon]="faCode"></fa-icon> Quick Tutorial on Weather App
@@ -39,6 +40,7 @@
         </mat-list-item>
       </a>
       <mat-divider></mat-divider>
+      <br />
       <a routerLink="/about" (click)="drawer.toggle()">
         <mat-list-item>
           <fa-icon [icon]="faUser"></fa-icon> About the Author
@@ -52,6 +54,8 @@
       <mat-toolbar-row>
         <fa-icon class="topmenu" mat-button (click)="drawer.toggle()" [icon]="faBars"></fa-icon>
         <span>{{title}}</span>
+        <span class="header-fill-remaining-space"></span>
+        <span><fa-icon (tap)="navigateBack()" [icon]="faArrowCircleLeft" class="header-icon"></fa-icon></span>
       </mat-toolbar-row>
     </mat-toolbar>
 
